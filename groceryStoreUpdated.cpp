@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// makes sense to declare this as a private class member?
 map<string, bool> groceryItems {};
 
 class GroceryStore {

@@ -92,7 +92,7 @@ class Customer : public Observer {
             cout << "Hey customer! A new message is available --> " << msg << "\n";
         }
 
-        void usubscribeCustomer() {
+        void unsubscribeCustomer() {
             cout << "Customer wants to unsubscribe the Grocery Store notifications - ";
             subject_.unsubscribe(this);
         }
@@ -122,6 +122,7 @@ int main() {
         {"Detergent", true}
     };
 
+    // is there an advantage in using pointers here?
     GroceryStore* objGs = new GroceryStore(itemList);
     Customer *objCust = new Customer(*objGs);
 
@@ -133,7 +134,7 @@ int main() {
     cout << "\n";
     objGs->refillInventory("Brown Bread");
     objCust->purchaseItem("Brown Bread");
-    objCust->usubscribeCustomer();
+    objCust->unsubscribeCustomer();
     cout << "\n";
     objGs->refillInventory("Blueberry Syrup");
 
