@@ -2,27 +2,27 @@
 
 using namespace std;
 
-int const total_grocery_items = 5;
+#define TOTAL_GROCERY_ITEMS 5
 
 struct GroceryItem {
     string itemName;
     bool available;
 };
 
-GroceryItem groceryItems[total_grocery_items];
+GroceryItem groceryItems[TOTAL_GROCERY_ITEMS];
 
 
 class GroceryStore{
     public:
         GroceryStore(GroceryItem* grocery) {
-            for (int i = 0; i < total_grocery_items; i++) {
+            for (int i = 0; i < TOTAL_GROCERY_ITEMS; i++) {
                 groceryItems[i].itemName = grocery[i].itemName;
                 groceryItems[i].available = grocery[i].available;
             }
         }
     
     void refillInventory(string itemName){
-        for (int i = 0; i < total_grocery_items; i++) {
+        for (int i = 0; i < TOTAL_GROCERY_ITEMS; i++) {
             if (itemName == groceryItems[i].itemName) {
                 groceryItems[i].available = true;
                 cout << "Item " << itemName << "has been refilled in the Grocery Store\n";
@@ -34,7 +34,7 @@ class GroceryStore{
 class Customer {
     public: 
         bool purchaseItem(string itemName) {
-            for (int i = 0; i < total_grocery_items;  i++) {
+            for (int i = 0; i < TOTAL_GROCERY_ITEMS;  i++) {
                 if (itemName == groceryItems[i].itemName && groceryItems[i].available) {
                     cout << "Item " << itemName << " is available\n";
                     return true;
