@@ -122,6 +122,10 @@ int main() {
         {"Detergent", true}
     };
 
+    GroceryItem* pointerGI = itemList;
+    int test = 5;
+    int* pointerTest = &test;
+
     // is there an advantage in using pointers here?
     GroceryStore* objGs = new GroceryStore(itemList);
     Customer *objCust = new Customer(*objGs);
